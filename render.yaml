@@ -1,0 +1,15 @@
+services:
+  # A Docker web service
+  - type: web
+    name: twikoo
+    env: docker
+    repo: https://github.com/SinzMise/twikoo-render.git # optional
+    region: oregon # optional (defaults to oregon)
+    plan: free # optional (defaults to starter)
+    healthCheckPath: /
+    envVars:
+      - key: TWIKOO_PORT
+        value: 8080
+      - key: MONGODB_URI
+        # value: mongodb_uri
+        sync: false
